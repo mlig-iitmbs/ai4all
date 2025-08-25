@@ -73,17 +73,18 @@ header {
   width: 65px;
   height: 65px;
   object-fit: contain;
-  border-radius: 14px; /* cube-like rouned corners */
-  background: rgba(255,255,255,0.16);           /* soft white haze */
-  backdrop-filter: blur(8px);                   /* glassy blur */
-  -webkit-backdrop-filter: blur(8px);           /* Safari */
-  box-shadow: 0 4px 18px rgba(0,0,0,0.13);      /* gentle shadow */
-  padding: 6px;
-  /* No border */
+  border-radius: 14px; /* softly rounded cube */
+  background: rgba(255,255,255,0.18); /* subtle glass haze */
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35); /* strong glass shadow */
+  padding: 0;
+  border: none;
   transition: transform 0.3s ease;
 }
 .logo-corner img:hover {
-  transform: scale(1.08);
+  transform: scale(1.10);
+  box-shadow: 0 18px 40px 0 rgba(0, 0, 0, 0.38); /* extra on hover */
 }
 @media (max-width: 600px) {
   .logo-corner img {
@@ -319,7 +320,7 @@ header {
 
   <footer>
     <p>For questions, email us at <a href="mailto:logicloom@ds.study.iitm.ac.in">logicloom@ds.study.iitm.ac.in</a></p>
-    <p>© 2025 ML Series - Wayanad × IITM BS Pi-Square Seminar</p>
+    <p>© 2025 ML Series team; IITM BS Pi-Square Seminar</p>
   </footer>
 </body>
 </html>
