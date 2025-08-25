@@ -73,22 +73,23 @@ header {
   width: 65px;
   height: 65px;
   object-fit: contain;
-  background: white;
-  border-radius: 12px; /* "cube-like" roundness */
+  border-radius: 14px; /* cube-like rouned corners */
+  background: rgba(255,255,255,0.16);           /* soft white haze */
+  backdrop-filter: blur(8px);                   /* glassy blur */
+  -webkit-backdrop-filter: blur(8px);           /* Safari */
+  box-shadow: 0 4px 18px rgba(0,0,0,0.13);      /* gentle shadow */
   padding: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  /* No border */
   transition: transform 0.3s ease;
 }
 .logo-corner img:hover {
   transform: scale(1.08);
 }
-
-/* Ensure logos scale well on small screens */
 @media (max-width: 600px) {
   .logo-corner img {
     width: 45px;
     height: 45px;
-    border-radius: 8px;
+    border-radius: 10px;
   }
 }
     header h1 {
