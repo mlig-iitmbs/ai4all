@@ -1,90 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ML Series - CFP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #f0f4ff, #ffffff);
+      background: linear-gradient(135deg, #eef4ff, #ffffff);
       color: #222;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 20px;
+      scroll-behavior: smooth;
+      line-height: 1.6;
     }
 
-    .container {
-      background: white;
-      max-width: 700px;
-      width: 100%;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    /* Header */
+    header {
+      background: linear-gradient(120deg, #0057e7, #00a1ff, #00e7ff);
+      color: white;
+      padding: 60px 20px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-
-    h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-      color: #2d2d2d;
+    header::after {
+      content: "";
+      position: absolute;
+      top: -50px; left: -50px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      animation: float 6s infinite ease-in-out;
     }
-
-    h2 {
-      font-size: 1.2em;
+    header::before {
+      content: "";
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 250px; height: 250px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      animation: float 8s infinite alternate;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(20px); }
+      100% { transform: translateY(0); }
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    header h2 {
+      font-size: 1.2rem;
       font-weight: 400;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+      opacity: 0.9;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+    .btn {
+      background: white;
+      color: #0057e7;
+      border: none;
+      padding: 15px 35px;
+      font-size: 1rem;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 15px;
+      transition: 0.4s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .btn:hover {
+      background: #f9f9f9;
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.2);
+    }
+
+    /* Sections */
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 35px 15px;
+      animation: fadeInUp 0.6s ease;
+    }
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+      color: #0057e7;
+      border-left: 6px solid #00c6ff;
+      padding-left: 12px;
+    }
+    section p {
+      font-size: 1.07rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .highlight {
+      background: #fff3f3;
+      border-left: 5px solid #ff4d4d;
+      padding: 15px 20px;
+      margin: 25px 0;
+      font-weight: 600;
+      color: #a00000;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* Categories grid */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 15px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 6px solid transparent;
+      background: linear-gradient(180deg, #ffffff, #f9fbff);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+      border-top: 6px solid #00aaff;
+    }
+    .card h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #0057e7;
+      font-weight: 600;
+    }
+    .card p {
       color: #555;
     }
 
-    p {
-      font-size: 1em;
-      line-height: 1.6;
-      margin-bottom: 30px;
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #f5faff, #e8f3ff);
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 0.95rem;
+      color: #444;
+      margin-top: 40px;
     }
-
-    .btn {
-      background-color: #0057e7;
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      font-size: 1em;
-      border-radius: 8px;
+    footer a {
+      color: #0057e7;
       text-decoration: none;
-      transition: background 0.3s ease;
-      display: inline-block;
+      font-weight: 700;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
 
-    .btn:hover {
-      background-color: #0041b3;
+    /* Fade animation */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
+    /* Responsive */
     @media (max-width: 600px) {
-      h1 {
-        font-size: 1.5em;
+      header h1 {
+        font-size: 2.2rem;
       }
-
-      p {
-        font-size: 0.95em;
+      section h3 {
+        font-size: 1.6rem;
+      }
+      .btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+
+  <header>
     <h1>Call for Proposals</h1>
-    <h2>ML Series – Wayanad × IITM BS's Pi-Square Seminar<br>A celebration of innovation, learning and collaboration</h2>
+    <h2>ML Series – Wayanad × IITM BS's Pi-Square Seminar<br>A celebration of innovation, learning & collaboration</h2>
+    <a href="https://mlseries.42web.io/cfp" target="_blank" class="btn">Submit Your Proposal</a>
+  </header>
+
+  <section>
+    <h3>Why Speak?</h3>
     <p>
-      We invite engaging, insightful and innovative student-led proposals for talks in our upcoming seminar series initiative organized ML series (LogicLooM) team - Wayanad X IITM BS's Pi-square seminar team<br/><br/>
-      This will be a fantastic opportunity to share ideas, present and lead a discussion! For any questions, reach out to <u>ml-series@ds.study.iitm.ac.in</u><br><br>
-      <font color="red">Deadline: 30th August 2025</font>
+      We invite engaging, innovative and quality proposals for student-led talks in the upcoming seminar series. Share your knowledge, spark discussions and inspire the Python community with your ideas!  
     </p>
-    <p>A participant/attendee for this event? Details awaited soon ...</p>
-    <a href="https://mlseries.42web.io/cfp" target="_blank" class="btn">Submit Proposal</a>
-  </div>
+    <div class="highlight">⚠️ Submission Deadline: 30th August 2025</div>
+  </section>
+
+  <section>
+    <h3>Format</h3>
+    <p>
+      📢 Talks are <b>30–60 minutes</b> long, focusing on Python and its ecosystem.  
+      Anything exciting, insightful or thought-provoking for Python programmers is welcome — from research to culture!
+    </p>
+  </section>
+
+  <section>
+    <h3>Diversity & Inclusion</h3>
+    <p>
+      We strongly believe in diversity of voices. We encourage students from all groups and different walks of life to share their experiences, ideas and perspectives. 
+    </p>
+  </section>
+
+  <section>
+    <h3>Speaker - Best Practices</h3>
+    <ul>
+      <li>Submit clear, detailed proposals (avoid vague ideas). Please choose your target audience - whether the content will be valuable for beginner or intermediate level attendees.</li>
+      <li>Talks will be in English</li>
+      <li>Don’t worry too much about communication skills - focus on content</li>
+      <li>Add as much detail as possible to the proposal. More detail helps reviewers make better approval decisions.</li>
+      <li>Share lessons from using Python in real projects, ideas for improving the language or ecosystem, or insights from other languages that can benefit Python. If nothing else, a clear, beginner-friendly teaching session on a niche topic (maybe a recent technology or a scientific paper) is always welcome.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Categories</h3>
+    <div class="categories">
+      <div class="card">
+        <h4>🐍 Python Core & Performance</h4>
+        <p>Internals, libraries, Cython and performance improvements.</p>
+      </div>
+      <div class="card">
+        <h4>🤖 AI, ML & Data Science</h4>
+        <p>DL, LLMs, multimodal AI, reinforcement learning, analytics, NLP, computer vision.</p>
+      </div>
+      <div class="card">
+        <h4>☁️ Cloud, DevOps & Infra</h4>
+        <p>AWS/GCP/Azure, CI/CD pipelines, etc.</p>
+      </div>
+      <div class="card">
+        <h4>💻 Web, Desktop & Full Stack</h4>
+        <p>APIs with FastAPI/Django, Desktop Apps (PyQt, Tkinter), scalable systems.</p>
+      </div>
+      <div class="card">
+        <h4>🔌 Hardware, Edge & IoT</h4>
+        <p>Robotics, automation, embedded systems, IoT.</p>
+      </div>
+      <div class="card">
+        <h4>🔬 Research & Education</h4>
+        <p>Python in scientific computing, physics, chemistry, climate, medical research, teaching.</p>
+      </div>
+      <div class="card">
+        <h4>🌍 Community</h4>
+        <p>Diversity, culture, ethics, tech & societal impact</p>
+      </div>
+      <div class="card">
+        <h4>🚀 Emerging Tech</h4>
+        <p>Quantum computing, blockchain, green computing, Python in FinTech & trading.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>For questions, email us at <a href="mailto:ml-series@ds.study.iitm.ac.in">ml-series@ds.study.iitm.ac.in</a> ✉️</p>
+    <p>© 2025 ML Series - Wayanad × IITM BS Pi-Square Seminar</p>
+  </footer>
 </body>
 </html>
