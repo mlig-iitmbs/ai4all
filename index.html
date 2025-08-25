@@ -47,7 +47,6 @@
       50% { transform: translateY(20px); }
       100% { transform: translateY(0); }
     }*/
-    /* Header background with rays.png */
 header {
   background: url('rays.png') center/cover no-repeat, 
               linear-gradient(120deg, #000000cc, #1a1a1aee);
@@ -58,13 +57,12 @@ header {
   overflow: hidden;
 }
 
-/* Corner logos */
 .logo-corner {
   position: absolute;
   top: 20px;
   display: flex;
   gap: 12px;
-  flex-wrap: wrap; /* helps on very small screens */
+  flex-wrap: wrap;
 }
 .logo-corner.left { left: 20px; }
 .logo-corner.right { right: 20px; }
@@ -73,11 +71,11 @@ header {
   width: 65px;
   height: 65px;
   object-fit: contain;
-  border-radius: 14px; /* softly rounded cube */
-  background: rgba(255,255,255,0.18); /* subtle glass haze */
+  border-radius: 14px;
+  background: rgba(255,255,255,0.18);
   backdrop-filter: blur(10px) saturate(180%);
   -webkit-backdrop-filter: blur(10px) saturate(180%);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35); /* strong glass shadow */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
   padding: 0;
   border: none;
   transition: transform 0.3s ease;
@@ -255,14 +253,16 @@ header {
   </section>
 
   <section>
+     <h3>About Organizers</h3>
+    <p>
+      <li>ML Series - A student-led initiative centered around AI-ML, started by the LogicLooM organizing team. <a href="https://mlig-iitmbs.github.io" target="_blank">Click Here</a> to know more.</li>
+      <li>π^2−SEMINAR - This is an instructor (POD) led initiative designed to foster knowledge-sharing in Mathematical, Data Science, ML, AI and Programming topics, empowering students to learn, present and grow together.</li>
+    </p>
     <h3>Format</h3>
     <p>
       📢 Talks are <b>30–60 minutes</b> long, focusing on Python and its ecosystem.  
       Anything exciting, insightful or thought-provoking for Python programmers is welcome — from research to culture!
     </p>
-  </section>
-
-  <section>
     <h3>Diversity & Inclusion</h3>
     <p>
       We strongly believe in diversity of voices. We encourage students from all groups and different walks of life to share their experiences, ideas and perspectives. 
