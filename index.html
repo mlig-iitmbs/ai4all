@@ -15,7 +15,7 @@
       line-height: 1.6;
     }
 
-    /* Header */
+    /* Header 
     header {
       background: linear-gradient(120deg, #0057e7, #00a1ff, #00e7ff);
       color: white;
@@ -46,7 +46,51 @@
       0% { transform: translateY(0); }
       50% { transform: translateY(20px); }
       100% { transform: translateY(0); }
-    }
+    }*/
+    /* Header background with rays.png */
+header {
+  background: url('rays.png') center/cover no-repeat, 
+              linear-gradient(120deg, #000000cc, #1a1a1aee);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Corner logos */
+.logo-corner {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap; /* helps on very small screens */
+}
+.logo-corner.left { left: 20px; }
+.logo-corner.right { right: 20px; }
+
+.logo-corner img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  background: white;
+  border-radius: 12px; /* "cube-like" roundness */
+  padding: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.logo-corner img:hover {
+  transform: scale(1.08);
+}
+
+/* Ensure logos scale well on small screens */
+@media (max-width: 600px) {
+  .logo-corner img {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+  }
+}
     header h1 {
       font-size: 3rem;
       font-weight: 700;
@@ -186,9 +230,18 @@
 <body>
 
   <header>
+      <div class="logo-corner left">
+    <img src="https://mlig-iitmbs.github.io/_astro/mls.BvEj2nmk.jpg" alt="">
+    <img src="https://mlig-iitmbs.github.io/epochs/1695118944298.jpeg" alt="">
+  </div>
+    
     <h1>Call for Proposals</h1>
     <h2>ML Series – Wayanad × IITM BS's Pi-Square Seminar<br>A celebration of innovation, learning & collaboration</h2>
     <a href="https://mlseries.42web.io/cfp" target="_blank" class="btn">Submit Your Proposal</a>
+
+    <div class="logo-corner right">
+    <img src="logo3.png" alt="Logo 3">
+  </div>
   </header>
 
   <section>
@@ -264,7 +317,7 @@
   </section>
 
   <footer>
-    <p>For questions, email us at <a href="mailto:logicloom@ds.study.iitm.ac.in">logicloom@ds.study.iitm.ac.in</a> ✉️</p>
+    <p>For questions, email us at <a href="mailto:logicloom@ds.study.iitm.ac.in">logicloom@ds.study.iitm.ac.in</a></p>
     <p>© 2025 ML Series - Wayanad × IITM BS Pi-Square Seminar</p>
   </footer>
 </body>
